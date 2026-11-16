@@ -73,7 +73,7 @@ https://github.com/user-attachments/assets/627dd6dc-deb1-41ee-9eba-4ad9d0ed07f9
 
 Acesse a experiência através do navegador:
 
-[CLIQUE AQUI PARA JOGAR](https://ocarina-online.netlify.app/)
+### [🎮CLIQUE AQUI PARA JOGAR](https://ocarina-online.netlify.app/)
 
 ---
 

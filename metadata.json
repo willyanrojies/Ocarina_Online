@@ -1,0 +1,6 @@
+{
+  "name": "Ocarina Online",
+  "description": "Simulador musical interativo de ocarina em ambiente 3D low-poly noturno estilo retrô.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

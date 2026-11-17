@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #04031c;
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.font-ocarina {
+  font-family: "Chakra Petch", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.ocarina-note-label {
+  color: #ffffff;
+  text-shadow:
+    0 0 9px rgba(45, 118, 255, 0.95),
+    0 2px 0 #072680,
+    -1px -1px 0 #1449d6,
+    1px -1px 0 #1449d6,
+    -1px 1px 0 #1449d6,
+    1px 1px 0 #1449d6;
+}
+
+.ocarina-gold-frame {
+  background-color: #a65906;
+  background-image:
+    linear-gradient(135deg, rgba(255, 224, 102, 0.45) 0%, rgba(184, 102, 8, 0.15) 50%, rgba(112, 52, 2, 0.45) 100%),
+    repeating-conic-gradient(#d4840e 0% 25%, #b86608 0% 50%, #e89d1c 0% 75%, #9b5104 0% 100%);
+  background-size: 100% 100%, 10px 10px;
+  box-shadow:
+    inset 0 2px 1px rgba(255, 236, 150, 0.75),
+    inset 0 -3px 2px rgba(72, 30, 0, 0.85),
+    inset 2px 0 1px rgba(255, 214, 92, 0.55),
+    inset -2px 0 1px rgba(96, 44, 2, 0.7),
+    0 12px 28px rgba(0, 0, 0, 0.75),
+    0 0 0 2px #3b1c00;
+}
+
+.ocarina-navy-surface {
+  background-color: #030e3d;
+  background-image:
+    radial-gradient(circle at 50% 35%, rgba(18, 52, 148, 0.25) 0%, rgba(2, 9, 46, 0.92) 100%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.015) 0px, rgba(255, 255, 255, 0.015) 3px, transparent 3px, transparent 6px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.12) 0px, rgba(0, 0, 0, 0.12) 3px, transparent 3px, transparent 6px);
+}
+
+.ocarina-cell-btn {
+  background: linear-gradient(180deg, #061860 0%, #030e42 60%, #02092e 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(56, 110, 240, 0.28),
+    inset 0 -2px 0 rgba(0, 4, 24, 0.9),
+    inset 2px 0 0 rgba(36, 86, 210, 0.18),
+    inset -2px 0 0 rgba(0, 6, 32, 0.85),
+    0 1px 0 rgba(0, 0, 0, 0.8);
+  transition: transform 80ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease;
+}
+
+.ocarina-cell-btn:hover {
+  background: linear-gradient(180deg, #0a2280 0%, #06165c 60%, #030d40 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(105, 165, 255, 0.5),
+    inset 0 -2px 0 rgba(0, 8, 40, 0.9),
+    0 0 12px rgba(64, 140, 255, 0.3);
+}
+
+.ocarina-cell-btn[data-active="true"] {
+  background: linear-gradient(180deg, #1b49c4 0%, #103294 55%, #0a226c 100%);
+  transform: translateY(2px) scale(0.97);
+  box-shadow:
+    inset 0 2px 6px rgba(255, 224, 120, 0.65),
+    inset 0 -1px 0 rgba(120, 190, 255, 0.6),
+    0 0 16px rgba(255, 200, 64, 0.65),
+    0 0 0 2px #ffd24c;
+}
+
+/* Filtro de televisão CRT retrô estilo Nintendo 64 */
+.crt-active-grade {
+  filter: contrast(1.07) saturate(1.13) brightness(1.09);
+}
+
+.crt-scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.035) 0px,
+    rgba(255, 255, 255, 0.035) 1px,
+    rgba(3, 4, 14, 0.29) 1.5px,
+    rgba(3, 4, 14, 0.31) 3px
+  );
+  will-change: opacity;
+  contain: strict;
+  animation: crt-subtle-flicker 0.14s infinite alternate;
+}
+
+.crt-phosphor-grille {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(255, 68, 68, 0.055) 0px,
+    rgba(255, 68, 68, 0.055) 1px,
+    rgba(72, 255, 118, 0.045) 1px,
+    rgba(72, 255, 118, 0.045) 2px,
+    rgba(86, 152, 255, 0.06) 2px,
+    rgba(86, 152, 255, 0.06) 3px
+  );
+}
+
+.crt-glass-sheen {
+  background-image: linear-gradient(
+    132deg,
+    rgba(210, 228, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.015) 24%,
+    transparent 48%
+  );
+}
+
+.crt-tube-bezel {
+  background-image:
+    radial-gradient(
+      ellipse 92% 90% at 50% 50%,
+      transparent 66%,
+      rgba(3, 3, 14, 0.34) 86%,
+      rgba(0, 0, 6, 0.86) 100%
+    );
+  box-shadow:
+    inset 0 0 64px rgba(0, 0, 0, 0.68),
+    inset 0 0 14px rgba(0, 0, 0, 0.88),
+    inset 0 0 0 3px rgba(6, 7, 16, 0.85);
+}
+
+@keyframes crt-subtle-flicker {
+  0% {
+    opacity: 0.96;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes menu-hop-pop {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+  22% {
+    transform: translateY(2px) scale(1.09, 0.91);
+  }
+  52% {
+    transform: translateY(-7px) scale(0.95, 1.07);
+  }
+  78% {
+    transform: translateY(1px) scale(1.03, 0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+@keyframes side-option-pop {
+  0% {
+    opacity: 0;
+    transform: translateX(-14px) scale(0.72);
+  }
+  65% {
+    opacity: 1;
+    transform: translateX(2px) scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes modal-pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.menu-hop-anim {
+  animation: menu-hop-pop 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.side-option-pop {
+  animation: side-option-pop 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-pop-in {
+  animation: modal-pop-in 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ocarina-n64-plaque {
+  background: linear-gradient(180deg, #9a5310 0%, #6b3405 55%, #4d2202 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 224, 130, 0.65),
+    inset 0 -2px 0 rgba(36, 14, 0, 0.9),
+    0 3px 8px rgba(0, 0, 0, 0.6),
+    0 0 0 2px #d98d12,
+    0 0 0 4px #331600;
+}
+
+.ocarina-n64-subcard {
+  box-shadow:
+    inset 0 0 0 2px #d98d12,
+    inset 0 2px 10px rgba(0, 0, 0, 0.8),
+    0 5px 14px rgba(0, 0, 0, 0.65),
+    0 0 0 2px #2c1300;
+}
+
+.ocarina-n64-segment-on {
+  background: linear-gradient(180deg, #6bd8ff 0%, #1c92ff 48%, #0d5cd4 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(210, 245, 255, 0.85),
+    inset 0 -1px 0 rgba(4, 34, 110, 0.9),
+    0 0 8px rgba(48, 175, 255, 0.55);
+}
+
+.ocarina-n64-segment-off {
+  background: linear-gradient(180deg, #051142 0%, #030a2b 100%);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.85),
+    inset 0 -1px 0 rgba(48, 86, 180, 0.16);
+}
+
+@keyframes title-logo-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.title-logo-float {
+  animation: title-logo-float 4.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-scanlines,
+  .menu-hop-anim,
+  .side-option-pop,
+  .modal-pop-in,
+  .title-logo-float {
+    animation: none;
+  }
+}
+
